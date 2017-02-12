@@ -8,7 +8,7 @@
 	        	Vechicles
 	        </div>
 	        <div class="col-lg-2">
-	        	<a href="/vehicle/add" class="btn btn-primary">
+	        	<a href="{{url('/vehicle/add')}}" class="btn btn-primary">
 						<i class="fa fa-plus"></i>
 	        	 &nbsp;New Vehicle</a>
 	        </div>
@@ -36,13 +36,13 @@
 			<td>{{ $v->v_max_passenger }}</td>
 			<td>{{ $v->created_at }}</td>
 			<td>{{ $v->updated_at }}</td>
-			<td><a href="/vehicle/edit/{{$v->v_id}}" class="btn btn-primary">
+			<td><a href="{{url('/vehicle/edit')}}/{{$v->v_id}}" class="btn btn-primary">
 				<i class="fa fa-pencil"></i>
 			</a>
 			</td>
 			<td>
 				
-				<form action="/vehicle/doDelete" method="post"onsubmit="return conf()">
+				<form action="{{url('/vehicle/doDelete')}}" method="post"onsubmit="return conf()">
 					{{ csrf_field() }}
 					<input type="hidden" name="v_id" value="{{$v->v_id}}">
 					<button type="submit" class="btn btn-danger">

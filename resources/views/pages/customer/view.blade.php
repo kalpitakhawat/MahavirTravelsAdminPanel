@@ -23,6 +23,7 @@
 			<th>Address</th>
 			<th>Created At</th>
 			<th>updated At</th>
+			<th>Book</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -34,13 +35,22 @@
 			<td>{{$c->c_address}}</td>
 			<td>{{ $c->created_at }}</td>
 			<td>{{ $c->updated_at }}</td>
-			<td><a href="/customer/edit/{{$c->c_id}}" class="btn btn-primary">
+			<td>
+				<form action="{{url('/booking/add')}}" method="post">
+					{{ csrf_field() }}
+					<input type="hidden" name="c_id" value="{{$c->c_id}}">
+					<button type="submit" class="btn btn-success">
+						<i class="fa fa-automobile"></i>
+					</button>
+				</form>	
+			</td>
+			<td><a href="{{url('/customer/edit')}}/{{$c->c_id}}" class="btn btn-primary">
 				<i class="fa fa-pencil"></i>
 			</a>
 			</td>
 			<td>
 				
-				<form action="/customer/doDelete" method="post"onsubmit="return conf()">
+				<form action="{{url('/customer/doDelete')}}" method="post"onsubmit="return conf()">
 					{{ csrf_field() }}
 					<input type="hidden" name="c_id" value="{{$c->c_id}}">
 					<button type="submit" class="btn btn-danger">

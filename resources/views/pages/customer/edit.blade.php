@@ -12,7 +12,7 @@
 	            <h3 class="panel-title">Edit Customer Details</h3>
 	        </div>
 	        <div class="panel-body">
-	            <form method="post" class="row" action="../doEdit">
+	            <form method="post" class="row" action="{{url('customer/doEdit')}}">
 	            	{{ csrf_field() }}
 	            	<input type="hidden" name="c_id" value="{{$cst->c_id}}"/>
 	            	<div class="form-group col-lg-10">

@@ -12,7 +12,7 @@
 	            <h3 class="panel-title">Edit Vehicle Details</h3>
 	        </div>
 	        <div class="panel-body">
-	            <form method="post" class="row" action="../doEdit">
+	            <form method="post" class="row" action="{{url('/vehicle/doEdit')}}">
 	            	{{ csrf_field() }}
 	            	<input type="hidden" name="v_id" value="{{$veh->v_id}}"/>
 	            	<div class="form-group col-lg-10">

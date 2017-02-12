@@ -15,16 +15,16 @@
     <title>Mahavir Travels</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/css/sb-admin.css" rel="stylesheet">
+    <link href="{{url('/css/sb-admin.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/css/plugins/morris.css" rel="stylesheet">
+    <link href="{{url('/css/plugins/morris.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{url('/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -158,23 +158,23 @@
                     
                     <?php $v = "/";  ?>
                     <li class="{{ $v == $u ? 'active' : '' }}">
-                        <a  href="/">Home</a>
+                        <a  href="{{url('/')}}">Home</a>
                     </li>
                     
                     <li class="{{strpos( $u, 'booking' )!==false ? 'active' : '' }}">
-                        <a href="/booking/view">Bookings</a>
+                        <a href="{{url('booking/view')}}">Booking</a>
                     </li>
 
                     <li class="{{ strpos( $u, 'customer' )!==false? 'active' : '' }}">
-                        <a href="/customer/view">Customer</a>
+                        <a href="{{url('customer/view')}}">Customer</a>
                     </li>
 
                     <li class="{{ strpos( $u, 'driver' )!==false? 'active' : '' }}">
-                        <a href="/driver/view">Driver</a>
+                        <a href="{{url('driver/view')}}">Driver</a>
                     </li>
 
                     <li class="{{ strpos( $u, 'vehicle' )!==false? 'active' : '' }}">
-                        <a href="/vehicle/view">Vehicles</a>
+                        <a href="{{url('vehicle/view')}}">Vehicles</a>
                     </li>
 
                     <!-- <li>
@@ -200,10 +200,15 @@
         </div>
     </div>
     <!-- jQuery -->
-    <script src="/js/jquery.js"></script>
+    <script src="{{url('/js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+    <script src="{{url('/js/bootstrap.min.js')}}"></script>
 
     <!-- Morris Charts JavaScript -->
     <!-- <script src="/js/plugins/morris/raphael.min.js"></script>

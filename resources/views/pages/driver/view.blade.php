@@ -8,7 +8,7 @@
 	        	Drivers
 	        </div>
 	        <div class="col-lg-2">
-	        	<a href="/driver/add" class="btn btn-primary">
+	        	<a href="{{url('/driver/add')}}" class="btn btn-primary">
 						<i class="fa fa-plus"></i>
 	        	 &nbsp;New Driver</a>
 	        </div>
@@ -36,13 +36,13 @@
 			<td>{{ $d->d_address }}</td>
 			<td>{{ $d->created_at }}</td>
 			<td>{{ $d->updated_at }}</td>
-			<td><a href="/driver/edit/{{$d->d_id}}" class="btn btn-primary">
+			<td><a href="{{url('/driver/edit')}}/{{$d->d_id}}" class="btn btn-primary">
 				<i class="fa fa-pencil"></i>
 			</a>
 			</td>
 			<td>
 				
-				<form action="/driver/doDelete" method="post"onsubmit="return conf()">
+				<form action="{{url('/driver/doDelete')}}" method="post"onsubmit="return conf()">
 					{{ csrf_field() }}
 					<input type="hidden" name="d_id" value="{{$d->d_id}}">
 					<button type="submit" class="btn btn-danger">

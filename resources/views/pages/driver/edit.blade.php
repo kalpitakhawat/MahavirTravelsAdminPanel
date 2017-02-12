@@ -13,7 +13,7 @@
 	            <h3 class="panel-title">Edit Driver Details</h3>
 	        </div>
 	        <div class="panel-body">
-	            <form method="post" class="row" action="../doEdit">
+	            <form method="post" class="row" action="{{url('/driver/doEdit')}}">
 	            	{{ csrf_field() }}
 	            	<input type="hidden" name="d_id" value="{{$drv->d_id}}"/>
 	            	<div class="form-group col-lg-10">

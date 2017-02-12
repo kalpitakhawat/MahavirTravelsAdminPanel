@@ -14,8 +14,9 @@ Route::get('/', function () {
     return view('pages.welcome');
 });
 Route::get('booking/add', function () {
-    return view('pages.booking.add');
+    return view('pages.booking.addwarrning');
 });
+Route::post('booking/add', 'BookingController@add');
 // Route::post('booking/doAdd', );
 Route::get('booking/view', function () {
     return view('pages.booking.view');
@@ -26,7 +27,7 @@ Route::get('booking/edit', function () {
 Route::get('booking/edit/{id}','BookingController@edit');
 Route::post('booking/doEdit', 'BookingController@update');
 Route::post('booking/doDelete', 'BookingController@delete');
-Route::get('booking/view','BookingController@index');
+Route::get('booking/view','BookingController@index')->name('bookingView');
 Route::post('booking/doAdd', 'BookingController@create');
 //Customer Routes
 Route::get('customer/add', function () {

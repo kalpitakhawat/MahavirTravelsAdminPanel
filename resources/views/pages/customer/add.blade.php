@@ -13,7 +13,7 @@
 	            <h3 class="panel-title">Add new Customer</h3>
 	        </div>
 	        <div class="panel-body">
-	            <form method="post" class="row" action="./doAdd">
+	            <form method="post" class="row" action="{{url('/customer/doAdd')}}">
 	            	{{ csrf_field() }}
 	            	<div class="form-group col-lg-10">
 	            		<label>Customer Name</label>

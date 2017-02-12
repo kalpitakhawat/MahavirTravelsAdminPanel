@@ -13,12 +13,23 @@
 	            <h3 class="panel-title">Create Booking</h3>
 	        </div>
 	        <div class="panel-body">
-	            <form method="post" class="row" action="./doAdd">
+	            <form method="post" class="row" action="{{url('/booking/doAdd')}}">
 	            	{{ csrf_field() }}
+	            	<input type="hidden" name="c_id" value="{{$c->c_id}}" />
 	            	<div class="form-group col-lg-10">
 	            		<label>Customer Name</label>
-	            		<input class="form-control" placeholder="Customer Name" type="text" name="c_id" />
+	            		<input class="form-control" placeholder="Customer Name" type="text" value="{{$c->c_name}}" disabled="" />
 	            	</div>
+	            	<div class="form-group col-lg-10">
+	            		<label>Vehicle Type</label>
+                        <select name="v_type" class="form-control">
+                        	<option value="">Select Type</option>
+                            <option value="car">car</option>
+                            <option value="family car">family car</option>
+                            <option value=" Mini Bus">Mini Bus</option>
+                            <option value="Bus">Bus</option>
+                        </select>
+                     </div>
 	            	<div class="form-group col-lg-10">
 	            		<label>Departure Date & Time</label>
 	            		<input class="form-control" placeholder="Departure Time" type="datetime-local" name="b_time_from" />
@@ -46,7 +57,7 @@
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="is_round_trip" id="optionsRadios2" value="option2">No
+                                        <input type="radio" name="is_round_trip" id="optionsRadios2" value="No">No
                                     </label>
                                 </div>
                             </div>
