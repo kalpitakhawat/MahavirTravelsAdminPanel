@@ -29,6 +29,16 @@ Route::post('booking/doEdit', 'BookingController@update');
 Route::post('booking/doDelete', 'BookingController@delete');
 Route::get('booking/view','BookingController@index')->name('bookingView');
 Route::post('booking/doAdd', 'BookingController@create');
+
+
+Route::post('booking/trip/assign', 'TripController@assign');
+Route::post('booking/trip/doassignment', 'TripController@create');
+Route::post('booking/trip/run', 'TripController@runtrip');
+Route::post('booking/trip/dorun', 'TripController@run');
+Route::post('booking/trip/complete', 'TripController@completetrip');
+Route::post('booking/trip/docomplete', 'TripController@complete');
+Route::post('booking/trip/info', 'TripController@info');
+
 //Customer Routes
 Route::get('customer/add', function () {
     return view('pages.customer.add');

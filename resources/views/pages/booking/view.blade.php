@@ -46,13 +46,21 @@
 			<td>{{$b->is_round_trip}}</td>
 			<td>{{$b->v_type}}</td>
 			<td>{{$b->b_price}}</td>
-			<td>{{$b->b_status}}</td>
+			<td>
+				<form action="{{url('/booking/trip/info')}}" method="post">
+					{{ csrf_field() }}
+					<input type="hidden" name="b_id" value="{{$b->b_id}}">
+					<button type="submit" class="btn btn-link" data-toggle="tooltip" title="Trip Detail" >
+						{{$b->b_status}}
+					</button>
+				</form>	
+			</td>
 			<td>{{$b->remarks}}</td>
 			<!-- <td>{{ date('d M Y - H:i:s', $b->created_at) }}</td> -->
 			<td>{{ date('d M Y - H:i:s', $b->updated_at) }}</td>
 			<td>				
 				@if ($b->b_status === "Booked")
-					<form action="{{url('/booking/doDelete')}}" method="post"onsubmit="return conf()">
+					<form action="{{url('/booking/trip/assign')}}" method="post">
 						{{ csrf_field() }}
 						<input type="hidden" name="b_id" value="{{$b->b_id}}">
 						<button type="submit" class="btn btn-info" data-toggle="tooltip" title="Assign Trip">
@@ -60,7 +68,7 @@
 						</button>
 					</form>	
 				@elseif ($b->b_status === "Trip Assigned")
-				    <form action="{{url('/booking/doDelete')}}" method="post"onsubmit="return conf()">
+				    <form action="{{url('/booking/trip/run')}}" method="post">
 						{{ csrf_field() }}
 						<input type="hidden" name="b_id" value="{{$b->b_id}}">
 						<button type="submit" class="btn btn-warning" data-toggle="tooltip" title="Run Trip">
@@ -69,7 +77,7 @@
 					</form>	
 				@elseif ($b->b_status === "Trip On The Way")
 				<?php $sts="disabled" ?>
-			    <form action="{{url('/booking/doDelete')}}" method="post"onsubmit="return conf()">
+			    <form action="{{url('/booking/trip/complete')}}" method="post">
 					{{ csrf_field() }}
 					<input type="hidden" name="b_id" value="{{$b->b_id}}">
 					<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Complete Trip">
@@ -78,7 +86,7 @@
 				</form>
 				@elseif ($b->b_status === "Completed")
 					<?php $sts="disabled" ?>
-				    <form action="{{url('/booking/doDelete')}}" method="post"onsubmit="return conf()">
+				    <form action="{{url('/booking/doDelete')}}" method="post">
 						{{ csrf_field() }}
 						<input type="hidden" name="b_id" value="{{$b->b_id}}">
 						<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Complete Trip" disabled="">

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
-    protected $table = 'drivers';
+    protected $table = 'trips';
+    public $timestamps = false;
     protected $fillable = [
        'b_id',
        'v_id',
@@ -19,7 +20,5 @@ class Trip extends Model
        'fuel_remaining',
        'v_fuel_avg',
        'payment_from_customer',
-       'created_at',
-       'updated_at'
    ];
 }
