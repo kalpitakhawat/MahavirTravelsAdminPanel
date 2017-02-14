@@ -69,21 +69,21 @@
                                                 <td>Status</td>
                                                 <td>{{$bkg->b_status}}</td>
                                             </tr>
-                                            @if($bkg->b_staus === "Trip Assigned")
-                                            <tr>
-                                                <td>Vendor Name</td>
-                                                <td>{{$trp->b_to_b_vendor}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Vehicle Detail</td>
-                                                <td>{{$vt->v_company}}&nbsp{{ $vt->v_model }}  {{$vt->v_number}}--{{$vt->v_max_passenger}} Seats</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Driver Detail</td>
-                                                <td>{{$dr->d_name}}&nbsp- {{ $dr->d_mobile }}</td>
-                                            </tr>
+                                            @if ($bkg->b_status == 'Trip Assigned')
+                                                <tr>
+                                                    <td>Vendor Name</td>
+                                                    <td>{{$trp->b_to_b_vendor}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vehicle Detail</td>
+                                                    <td>{{$vt->v_company}}&nbsp{{ $vt->v_model }}  {{$vt->v_number}}--{{$vt->v_max_passenger}} Seats</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Driver Detail</td>
+                                                    <td>{{$dr->d_name}}&nbsp- {{ $dr->d_mobile }}</td>
+                                                </tr>
                                             
-                                            @elseif($bkg->b_staus == "Trip On The Way ")
+                                            @elseif ($bkg->b_status == 'Trip On The Way')
                                             <tr>
                                                 <td>Vendor Name</td>
                                                 <td>{{$trp->b_to_b_vendor}}</td>
@@ -112,7 +112,7 @@
                                                 <td>Fuel At this trip</td>
                                                 <td>{{$trp->fuel_at_trip}} ltr.</td>
                                             </tr>
-                                            @elseif($bkg->b_staus == "Completed")
+                                            @elseif ($bkg->b_status == 'Completed')
                                              <tr>
                                                 <td>Vendor Name</td>
                                                 <td>{{$trp->b_to_b_vendor}}</td>
@@ -147,7 +147,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Average</td>
-                                                <td>{{$trp->v_start_meter}}</td>
+                                                <td>{{$avg}} kpl</td>
                                             </tr>
                                             <tr>
                                                 <td>Payment From Customer</td>

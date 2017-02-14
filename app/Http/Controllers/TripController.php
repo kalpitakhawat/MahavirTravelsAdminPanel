@@ -75,6 +75,7 @@ class TripController extends Controller
         $vt=(object) "";
         $ct=(object) "";
         $dr=(object) "";
+        $avg="";
         $c_id=$bkg['c_id'];
         $ct=Customer::where('c_id',$c_id)->get();
 
@@ -83,8 +84,11 @@ class TripController extends Controller
             $trp=Trip::where('b_id',$id)->get();
             $trp=$trp[0];
             $v_id=$trp['v_id'];
-        
-            
+             if ($bkg['b_status']=="Completed") {
+                $dst= floatval($trp['v_end_meter'])-floatval($trp['v_start_meter']);
+                    $fuel=(floatval($trp['filled_fuel'])+floatval($trp['fuel_at_trip']))-floatval($trp['fuel_remaining']);
+                $avg=($dst/$fuel)*0.4251;
+                }   
 
 
             $d_id=$trp['d_id'];
@@ -98,7 +102,7 @@ class TripController extends Controller
             $dr=Driver::where('d_id',$d_id)->get();
             $dr=$dr[0];
         }
-        return view('pages.booking.trip.info')->with('bkg',$bkg)->with('trp',$trp)->with('ct',$ct)->with('vt',$vt)->with('dr',$dr);
+        return view('pages.booking.trip.info')->with('bkg',$bkg)->with('trp',$trp)->with('ct',$ct)->with('vt',$vt)->with('dr',$dr)->with('avg',$avg);
 
 
     }
