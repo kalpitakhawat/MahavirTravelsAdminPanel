@@ -8,7 +8,7 @@
 	        	Customer
 	        </div>
 	        <div class="col-lg-2">
-	        	<a href="/customer/add" class="btn btn-primary">
+	        	<a href="{{url('/customer/add')}}" class="btn btn-primary">
 						<i class="fa fa-plus"></i>
 	        	 &nbsp;New Customer</a>
 	        </div>
@@ -23,6 +23,8 @@
 			<th>Address</th>
 			<th>Created At</th>
 			<th>updated At</th>
+			<th>History</th>
+			<th>Message</th>
 			<th>Book</th>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -35,6 +37,26 @@
 			<td>{{$c->c_address}}</td>
 			<td>{{ $c->created_at }}</td>
 			<td>{{ $c->updated_at }}</td>
+			<td>
+				
+				<form action="{{url('/customer/info')}}" method="post">
+					{{ csrf_field() }}
+					<input type="hidden" name="c_id" value="{{$c->c_id}}">
+					<button type="submit" class="btn btn-info" data-toggle="tooltip" title="History">
+						<i class="fa fa-history"></i>
+					</button>
+				</form>	
+			</td>
+			<td>
+				
+				<form action="{{url('/sms/portal')}}" method="post">
+					{{ csrf_field() }}
+					<input type="hidden" name="c_mobile" value="{{$c->c_mobile}}">
+					<button type="submit" class="btn btn-info" data-toggle="tooltip" title="Send Message">
+						<i class="fa fa-envelope-o"></i>
+					</button>
+				</form>	
+			</td>
 			<td>
 				<form action="{{url('/booking/add')}}" method="post">
 					{{ csrf_field() }}

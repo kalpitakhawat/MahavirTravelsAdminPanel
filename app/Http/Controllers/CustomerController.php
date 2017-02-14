@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Customer;
+use App\Booking;
+
 class CustomerController extends Controller
 {
     public function index(Request $request)
@@ -46,5 +48,14 @@ class CustomerController extends Controller
     	$id=$request['c_id'];
         Customer::where('c_id', $id )->delete();
         return redirect()->action('CustomerController@index');
+    }
+    public function info(Request $request)
+    {
+        $id=$request['c_id'];
+        $cst=Customer::where('c_id',$id)->first();   
+        $i=1;
+        $bkg=Booking::where('c_id',$id)->get();   
+        return view("pages.customer.info")->with('bkg',$bkg)->with("i",$i)->with('cst',$cst);
+
     }
 }

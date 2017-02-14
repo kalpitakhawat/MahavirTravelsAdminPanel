@@ -134,16 +134,10 @@
                     </ul>
                 </li> -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Setting <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -176,7 +170,9 @@
                     <li class="{{ strpos( $u, 'vehicle' )!==false? 'active' : '' }}">
                         <a href="{{url('vehicle/view')}}">Vehicles</a>
                     </li>
-
+                    <li class="{{ strpos( $u, 'sms' )!==false? 'active' : '' }}">
+                        <a href="{{url('sms/portal')}}">SMS Portal</a>
+                    </li>
                     <!-- <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">

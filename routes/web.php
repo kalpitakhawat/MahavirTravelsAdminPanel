@@ -54,7 +54,7 @@ Route::post('customer/doEdit', 'CustomerController@update');
 Route::post('customer/doDelete', 'CustomerController@delete');
 Route::get('customer/view','CustomerController@index');
 Route::post('customer/doAdd', 'CustomerController@create');
-
+Route::post('customer/info', 'CustomerController@info');
 //Vehicle Routes
 Route::get('vehicle/add', function () {
     return view('pages.vehicle.add');
@@ -84,3 +84,10 @@ Route::post('driver/doEdit', 'DriverController@update');
 Route::post('driver/doDelete', 'DriverController@delete');
 Route::get('driver/view','DriverController@index');
 Route::post('driver/doAdd', 'DriverController@create');
+
+Route::get('sms/portal', function () {
+    return view('pages.sms.portal');
+});
+Route::post('sms/portal', 'SmsController@show');
+Route::post('sms/send', 'SmsController@send');
+
