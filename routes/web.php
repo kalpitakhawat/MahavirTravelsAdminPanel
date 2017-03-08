@@ -12,7 +12,8 @@
 Route::get('login', function () {
     return view('pages.authentication.login');
 });
-
+Route::post('dologin', 'AuthController@dologin');
+Route::group(['middleware' => 'auth'], function () {
 Route::get('/', function () {
     return view('pages.welcome');
 });
@@ -93,4 +94,5 @@ Route::get('sms/portal', function () {
 });
 Route::post('sms/portal', 'SmsController@show');
 Route::post('sms/send', 'SmsController@send');
+});
 

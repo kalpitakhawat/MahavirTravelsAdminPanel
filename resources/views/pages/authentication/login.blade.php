@@ -20,19 +20,23 @@
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Login</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="#" method="post">				
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="/dologin" method="post">				
 				{{ csrf_field() }}
 				
-				@if(Session::has('error'))
-					<div class="alert alert-danger fade in">
-				  		<strong>Error!</strong> {{ Session::get('error') }}
+				@if($errors->any())
+					@foreach ($errors->all() as $error)
+				      <div class="alert alert-danger fade in">
+				  		<strong>Error!</strong> {{ $error }}
 					</div>
+				  	@endforeach
+					<?php $e =implode('', $errors->all()) ?>
+					
 				@endif
 		        <div class="form-group">
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
 		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
-		            	<input type="text" class="form-control" id="username" placeholder="Username">
+		            	<input type="text" name="username" class="form-control" id="username" placeholder="Username">
 		            </div>		            	            
 		          </div>              
 		        </div>
@@ -40,7 +44,7 @@
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
 		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
-		            	<input type="password" class="form-control" id="password" placeholder="Password">
+		            	<input type="password" name="password" class="form-control" id="password" placeholder="Password">
 		            </div>
 		          </div>
 		        </div>
