@@ -25,8 +25,12 @@
 
     <!-- Custom Fonts -->
     <link href="{{url('/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{url('/js/bootstrap.min.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -137,7 +141,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Setting <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Change Password</a>
+                            <a href="#"><i class="fa fa-fw fa-key"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -204,8 +208,6 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
-    <script src="{{url('/js/bootstrap.min.js')}}"></script>
-
     <!-- Morris Charts JavaScript -->
     <!-- <script src="/js/plugins/morris/raphael.min.js"></script>
     <script src="/js/plugins/morris/morris.min.js"></script>

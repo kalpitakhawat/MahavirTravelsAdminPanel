@@ -11,7 +11,7 @@ use App\Customer;
 use DB;
 class BookingController extends Controller
 {
-    public $_vt = ["car","family car","Mini Bus","Bus"];
+    public $_vt = ["car","family car","Mini Bus","Bus","Slipper Coach Bus","3x2 Bus","2x2 Bus"];
     public function index(Request $request)
     {
     	$bkg = DB::table('bookings')->select('bookings.*','customers.c_name')->join("customers","bookings.c_id","=","customers.c_id")->get();

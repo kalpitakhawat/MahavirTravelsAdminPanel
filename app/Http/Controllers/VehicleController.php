@@ -8,7 +8,7 @@ use App\Vehicle;
 
 class VehicleController extends Controller
 {
-    public $_vt = ["car","family car","Mini Bus","Bus"];
+    public $_vt = ["car","family car","Mini Bus","Bus","Slipper Coach Bus","3x2 Bus","2x2 Bus"];
     public function index(){
 		 $veh = Vehicle::all();
 		 $i=1; 

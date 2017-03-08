@@ -15,21 +15,24 @@
 	        </div>
 	    </h2>   
 	</div>
-	<table class="table table-striped">
-		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Mobile Number</th>
-			<th>Address</th>
-			<th>Created At</th>
-			<th>updated At</th>
-			<th>History</th>
-			<th>Message</th>
-			<th>Book</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-		@foreach ($cst as $c )
+	<table class="table table-striped table-responsive" id="customer">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Mobile Number</th>
+				<th>Address</th>
+				<th>Created At</th>
+				<th>updated At</th>
+				<th>History</th>
+				<th>Message</th>
+				<th>Book</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach ($cst as $c )
 		<tr>
 			<td>{{ $i++}}</td>
 			<td>{{ $c->c_name }}</td>
@@ -83,9 +86,14 @@
 
 		</tr>
 		@endforeach
+		</tbody>
+		
 	</table>
 </div>
 <script type="text/javascript">
 	function conf() {	return  confirm("Are you sure to delete ??") }
+</script>
+<script type="text/javascript">
+	$('#customer').DataTable();
 </script>
 @stop

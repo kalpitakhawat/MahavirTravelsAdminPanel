@@ -31,6 +31,9 @@
                             <option value="family car">family car</option>
                             <option value=" Mini Bus">Mini Bus</option>
                             <option value="Bus">Bus</option>
+                            <option value="Slipper Coach Bus">Slipper Coach Bus</option>
+                            <option value="3x2 Bus">3x2 Bus</option>
+                            <option value="2x2 Bus">2x2 Bus</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-5">

@@ -9,6 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('login', function () {
+    return view('pages.authentication.login');
+});
 
 Route::get('/', function () {
     return view('pages.welcome');

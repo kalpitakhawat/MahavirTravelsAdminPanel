@@ -28,6 +28,9 @@
                             <option value="family car">family car</option>
                             <option value=" Mini Bus">Mini Bus</option>
                             <option value="Bus">Bus</option>
+                            <option value="Slipper Coach Bus">Slipper Coach Bus</option>
+                            <option value="3x2 Bus">3x2 Bus</option>
+                            <option value="2x2 Bus">2x2 Bus</option>
                         </select>
                      </div>
 	            	<div class="form-group col-lg-10">
@@ -40,13 +43,11 @@
 	            	</div>
 	            	<div class="form-group col-lg-10">
 	            		<label>Departure Address</label>
-	            		<textarea class="form-control" rows="3" placeholder="Departure Address" name="b_from">
-	            		</textarea>
+	            		<textarea class="form-control" rows="3" placeholder="Departure Address" name="b_from"></textarea>
 	            	</div>
 	            	<div class="form-group col-lg-10">
 	            		<label>Arrival Address</label>
-	            		<textarea class="form-control" rows="3" placeholder="Arrival Address" name="b_to">
-	            		</textarea>
+	            		<textarea class="form-control" rows="3" placeholder="Arrival Address" name="b_to"></textarea>
 	            	</div>
 	            	<div class="form-group col-lg-10">
                                 <label>Round Trip</label>
@@ -71,8 +72,7 @@
 	            	</div>
 	            	<div class="form-group col-lg-10">
 	            		<label>Remarks</label>
-	            		<textarea class="form-control" rows="3" placeholder="Remarks" name="remarks">
-	            		</textarea>
+	            		<textarea class="form-control" rows="3" placeholder="Remarks" name="remarks"></textarea>
 	            	</div>
 	            	<div class="form-group col-lg-10 ">
 	            		<button type="submit" class="btn btn-primary">Submit</button>
