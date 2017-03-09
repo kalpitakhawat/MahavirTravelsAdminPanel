@@ -5,7 +5,7 @@
     Form Pack
     http://www.templatemo.com/preview/templatemo_418_form_pack 
     -->
-	<title>Login One</title>
+	<title>Mahavir Travelsv</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
@@ -36,7 +36,7 @@
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
 		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
-		            	<input type="text" name="username" class="form-control" id="username" placeholder="Username">
+		            	<input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
 		            </div>		            	            
 		          </div>              
 		        </div>
@@ -44,7 +44,7 @@
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
 		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
-		            	<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+		            	<input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
 		            </div>
 		          </div>
 		        </div>

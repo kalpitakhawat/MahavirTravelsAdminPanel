@@ -141,11 +141,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Setting <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-key"></i> Change Password</a>
+                            <a href="/changePassword"><i class="fa fa-fw fa-key"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/logout""><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -203,11 +203,7 @@
     <script src="{{url('/js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
+   
     <!-- Morris Charts JavaScript -->
     <!-- <script src="/js/plugins/morris/raphael.min.js"></script>
     <script src="/js/plugins/morris/morris.min.js"></script>

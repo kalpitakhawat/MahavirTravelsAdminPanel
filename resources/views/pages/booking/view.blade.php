@@ -139,4 +139,9 @@
 <script type="text/javascript">
 	$('#booking').DataTable();
 </script>
+ <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 @stop
