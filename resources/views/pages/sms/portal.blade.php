@@ -65,6 +65,10 @@
             </div>
             <div class="panel-body" style="max-height: 265px; overflow-y: scroll;">
 	            <div class="list-group">
+	            	<a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">Blank Message</h4>
+                        <p class="list-group-item-text"></p>
+                    </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Promotion</h4>
                         <p class="list-group-item-text">JAY JINENDRA<br/>MAHAVIR TRAVELS<br/>All types of Cars and Buses available on rent. <br/>Contact-<br/>ShantilalJi Kunavat:9998612962,8128457286<br/>Nishang Kunavat:7383145575<br/>Office No:8140177359<br/>MAHAVIR TRAVELS,Your Comforts…. We care</p>

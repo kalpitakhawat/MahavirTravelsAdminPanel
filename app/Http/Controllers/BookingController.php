@@ -9,7 +9,7 @@ use App\Booking;
 use App\Customer;
 
 use DB;
-class BookingController extends Controller
+class BookingController extends Controller 
 {
     public $_vt = ["car","family car","Mini Bus","Bus","Slipper Coach Bus","3x2 Bus","2x2 Bus"];
     public function index(Request $request)
