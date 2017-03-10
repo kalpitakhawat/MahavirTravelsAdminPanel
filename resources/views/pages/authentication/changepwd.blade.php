@@ -11,16 +11,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
-	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<link href="{{url('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{url('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{url('/css/bootstrap-theme.min.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{url('/css/templatemo_style.css')}}" rel="stylesheet" type="text/css">	
 </head>
 <body class="templatemo-bg-gray">
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Change Password</h1>
-			<form class="form-horizontal templatemo-forgot-password-form templatemo-container" role="form" action="dochange" method="post">		
+			<form class="form-horizontal templatemo-forgot-password-form templatemo-container" role="form" action="{{url('/dochange')}}" method="post">		
 				{{ csrf_field() }}
 				@if($errors->any())
 					@foreach ($errors->all() as $error)
@@ -51,7 +51,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		            <input type="submit" value="Change Password" class="btn btn-danger">
-		            <a href="/" class="text-right pull-right"> Go to Dashboard</a>
+		            <a href="{{url('/')}}" class="text-right pull-right"> Go to Dashboard</a>
 		          </div>
 		        </div>
 		      </form>

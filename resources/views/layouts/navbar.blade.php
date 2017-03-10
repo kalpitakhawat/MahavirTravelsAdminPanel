@@ -141,11 +141,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User Setting <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/changePassword"><i class="fa fa-fw fa-key"></i> Change Password</a>
+                            <a href="{{url('/changePassword')}}"><i class="fa fa-fw fa-key"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="/logout""><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="{{url('/logout')}}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
