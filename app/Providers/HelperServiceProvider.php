@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Providers;
-
 use Illuminate\Support\ServiceProvider;
-
 class HelperServiceProvider extends ServiceProvider
 {
     /**
@@ -15,7 +12,6 @@ class HelperServiceProvider extends ServiceProvider
     {
         //
     }
-
     /**
      * Register the application services.
      *
