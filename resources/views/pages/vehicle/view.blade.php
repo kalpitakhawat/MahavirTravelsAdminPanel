@@ -25,8 +25,10 @@
 				<th>Passing Number</th>
         <th>Maximum Fuel Capacity</th>
 				<th>Passenger capacity</th>
+        <th>Maintenance at every</th>
 				<th>Created At</th>
 				<th>updated At</th>
+        <th>Vehicle Info</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
@@ -41,8 +43,19 @@
 				<td>{{$v->v_number}}</td>
         <td>{{$v->max_fuel_capacity}} ltrs</td>
 				<td>{{ $v->v_max_passenger }}</td>
+        <td>{{$v->maintenance_at}} km</td>
 				<td>{{ $v->created_at }}</td>
 				<td>{{ $v->updated_at }}</td>
+        <td>
+
+  				<form action="{{url('/vehicle/info')}}" method="post">
+  					{{ csrf_field() }}
+  					<input type="hidden" name="v_id" value="{{$v->v_id}}">
+  					<button type="submit" class="btn btn-info" data-toggle="tooltip" title="Vehicle And Maintenance Info">
+  						<i class="fa fa-wrench"></i>
+  					</button>
+  				</form>
+  			</td>
 				<td><a href="{{url('/vehicle/edit')}}/{{$v->v_id}}" class="btn btn-primary">
 					<i class="fa fa-pencil"></i>
 				</a>

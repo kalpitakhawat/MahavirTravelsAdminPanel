@@ -43,6 +43,13 @@
                             <option value="2x2 Bus">2x2 Bus</option>
                         </select>
                     </div>
+										<div class="form-group col-lg-5">
+											<label>Maintenance at every Kilometers</label>
+											<div class="input-group">
+				            		<input class="form-control" placeholder="Maintenance" type="text" name="maintenance_at" />
+				            		<span class="input-group-addon">km.</span>
+			            		</div>
+								</div>
                     <div class="form-group col-lg-5">
                     	<label>Maximum Passenger Capacity</label>
 	            		<input class="form-control" placeholder="Maximum Passenger Capacity" type="number" name="v_max_passenger" />

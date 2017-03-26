@@ -9,6 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('test', function () {
+    return MyHelpers::cron();
+});
 Route::get('login', function () {
     return view('pages.authentication.login');
 });
@@ -78,8 +81,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('vehicle/doEdit', 'VehicleController@update');
     Route::post('vehicle/doDelete', 'VehicleController@delete');
     Route::get('vehicle/view','VehicleController@index');
+    Route::get('vehicle/view','VehicleController@index');
+    Route::post('vehicle/info', 'VehicleController@info');
     Route::post('vehicle/doAdd', 'VehicleController@create');
-
+    Route::post('vehicle/maintenance/complete', 'MaintenanceController@complete');
+    Route::post('vehicle/maintenance/docomplete', 'MaintenanceController@docomplete');
     //Driver Routes
     Route::get('driver/add', function () {
         return view('pages.driver.add');
@@ -103,4 +109,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('sms/portal', 'SmsController@show');
     Route::post('sms/send', 'SmsController@send');
 });
-

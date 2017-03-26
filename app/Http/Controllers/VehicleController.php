@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Input;
 
 use Illuminate\Http\Request;
 use App\Vehicle;
-
+use App\Maintenance;
 class VehicleController extends Controller
 {
     public $_vt = ["car","family car","Mini Bus","Bus","Slipper Coach Bus","3x2 Bus","2x2 Bus"];
@@ -18,7 +18,7 @@ class VehicleController extends Controller
     	$inputs = Input::all();
     	$t=time();
     	$inputs['created_at']=$t;
-    	$inputs['updated_at']=$t; 
+    	$inputs['updated_at']=$t;
     	unset($inputs['_token']);
     	$insert_id = Vehicle::insertGetId($inputs);
         return redirect()->action('VehicleController@index');
@@ -43,6 +43,15 @@ class VehicleController extends Controller
         $id=$request['v_id'];
         Vehicle::where('v_id', $id )->delete();
         return redirect()->action('VehicleController@index');
+    }
+    public function info(Request $request)
+    {
+      $input=Input::all();
+      $v_id=$input['v_id'];
+      $v=Vehicle::where('v_id',$v_id)->first();
+      $mnt=Maintenance::where('v_id',$v_id)->get();
+      $i=0;
+      return view("pages.vehicle.info")->with(["vst"=>$v,"mnt"=>$mnt,"i"=>$i]);
     }
 
 }

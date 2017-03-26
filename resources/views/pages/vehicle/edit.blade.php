@@ -43,6 +43,13 @@
                         	@endforeach
                         </select>
                     </div>
+										<div class="form-group col-lg-5">
+											<label>Maintenance at every Kilometers</label>
+											<div class="input-group">
+				            		<input class="form-control" placeholder="Maintenance" type="text" name="maintenance_at" value="{{$veh->maintenance_at}}"/>
+				            		<span class="input-group-addon">km.</span>
+			            		</div>
+								</div>
                     <div class="form-group col-lg-5">
                     	<label>Maximum Passenger Capacity</label>
 	            		<input class="form-control" placeholder="Maximum Passenger Capacity" type="number" name="v_max_passenger" value="{{$veh->v_max_passenger}}" />
