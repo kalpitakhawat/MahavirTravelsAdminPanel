@@ -54,7 +54,7 @@ class BookingController extends Controller
     }
     public function delete(Request $request)
     {
-    	$id=$request['b_id'];
+    	$id=$request['b_id']; 
         Booking::where('b_id', $id )->delete();
         return redirect()->action('BookingController@index');
     }

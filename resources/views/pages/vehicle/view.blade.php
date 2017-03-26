@@ -13,16 +13,17 @@
 	        	 &nbsp;New Vehicle</a>
 	        </div>
 	        </div>
-	    </h2>   
+	    </h2>
 	</div>
 	<table class="table table-striped" id="vehicle">
 		<thead>
-			
+
 			<tr>
 				<th>Id</th>
 				<th>Model</th>
 				<th>Company</th>
 				<th>Passing Number</th>
+        <th>Maximum Fuel Capacity</th>
 				<th>Passenger capacity</th>
 				<th>Created At</th>
 				<th>updated At</th>
@@ -31,13 +32,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			
+
 			@foreach ($veh as $v )
 			<tr>
 				<td>{{ $i++}}</td>
 				<td>{{ $v->v_model }}</td>
 				<td>{{ $v->v_company }}</td>
 				<td>{{$v->v_number}}</td>
+        <td>{{$v->max_fuel_capacity}} ltrs</td>
 				<td>{{ $v->v_max_passenger }}</td>
 				<td>{{ $v->created_at }}</td>
 				<td>{{ $v->updated_at }}</td>
@@ -46,7 +48,7 @@
 				</a>
 				</td>
 				<td>
-					
+
 					<form action="{{url('/vehicle/doDelete')}}" method="post"onsubmit="return conf()">
 						{{ csrf_field() }}
 						<input type="hidden" name="v_id" value="{{$v->v_id}}">

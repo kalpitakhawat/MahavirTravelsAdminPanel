@@ -8,7 +8,7 @@
 	        	Trip
 	        </div>
 	        </div>
-	    </h2>   
+	    </h2>
 	</div>
 	<div class="col-lg-8">
 		<div class="panel panel-default">
@@ -82,7 +82,7 @@
                                                     <td>Driver Detail</td>
                                                     <td>{{$dr->d_name}}&nbsp- {{ $dr->d_mobile }}</td>
                                                 </tr>
-                                            
+
                                             @elseif ($bkg->b_status == 'Trip On The Way')
                                             <tr>
                                                 <td>Vendor Name</td>
@@ -143,7 +143,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Fuel At trip Complition</td>
-                                                <td>{{$trp->fuel_remaining}}</td>
+                                                <td>{{$trp->fuel_remaining}} ltr.</td>
                                             </tr>
                                             <tr>
                                                 <td>Average</td>

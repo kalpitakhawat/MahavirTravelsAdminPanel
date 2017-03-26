@@ -12,7 +12,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
     	 $cst = Customer::all();
-		 $i=1; 
+		 $i=1;
 		 return view('pages.customer.view')->with("cst",$cst)->with("i",$i);
     }
     public function create(Request $request)
@@ -23,7 +23,7 @@ class CustomerController extends Controller
     	$inputs['updated_at']=$t;
     	unset($inputs['_token']);
     	$insert_id = Customer::insertGetId($inputs);
-        return redirect()->action('CustomerController@index');	
+        return redirect()->action('CustomerController@index');
     }
     public function update(Request $request)
     {
@@ -45,16 +45,16 @@ class CustomerController extends Controller
     }
     public function delete(Request $request)
     {
-    	$id=$request['c_id'];
-        Customer::where('c_id', $id )->delete();
-        return redirect()->action('CustomerController@index');
+      $id=$request['c_id'];
+      Customer::where('c_id', $id )->delete();
+      return redirect()->action('CustomerController@index');
     }
     public function info(Request $request)
     {
         $id=$request['c_id'];
-        $cst=Customer::where('c_id',$id)->first();   
+        $cst=Customer::where('c_id',$id)->first();
         $i=1;
-        $bkg=Booking::where('c_id',$id)->get();   
+        $bkg=Booking::where('c_id',$id)->get();
         return view("pages.customer.info")->with('bkg',$bkg)->with("i",$i)->with('cst',$cst);
 
     }

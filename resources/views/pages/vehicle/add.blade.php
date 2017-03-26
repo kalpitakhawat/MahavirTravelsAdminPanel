@@ -5,7 +5,7 @@
 	<div class="col-lg-12">
 	    <h2 class="page-header">
 	         Vechicles
-	    </h2>   
+	    </h2>
 	</div>
 	<div class="col-lg-8">
 		<div class="panel panel-default">
@@ -23,6 +23,13 @@
 	            		<label>Company Name</label>
 	            		<input class="form-control" placeholder="Company" type="text" name="v_company" />
 	            	</div>
+								<div class="form-group col-lg-10">
+	            		<label>Maximum Fuel Tank Capacity</label>
+		            	<div class="input-group">
+		            		<input class="form-control" placeholder="Maximum Fuel Tank Capacity" type="text" name="max_fuel_capacity" />
+		            		<span class="input-group-addon">ltr.</span>
+	            		</div>
+                </div>
 	            	<div class="form-group col-lg-5">
 	            		<label>Vehicle Type</label>
                         <select name="v_type" class="form-control">
@@ -43,7 +50,7 @@
 	            	<div class="form-group col-lg-5">
 	            		<label>Passing Number</label>
 	            		<input class="form-control" placeholder="Vehicle Passing Number" type="text" name="v_number" />
-	            	</div>	
+	            	</div>
 	            	<div class="form-group col-lg-10 ">
 
 	            		<button type="submit" class="btn btn-primary">Submit </button>

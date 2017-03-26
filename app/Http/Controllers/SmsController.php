@@ -11,9 +11,10 @@ class SmsController extends Controller
     {
     	$num=$request['number'];
     	$msg=$request['msg'];
-    	//$r=sms::send($num,$msg);
-    		$result=MyHelpers::sendSMS($num,$msg);
-        	return view("pages.sms.result")->with(["r"=>$result->message]);
+        $result=MyHelpers::sendSMS($num,$msg);
+        /*dd($result);*/
+        //$result=$result['message'];
+        return view("pages.sms.result")->with(["r"=>$result->message]);
 			
     }
     public function show(Request $request)

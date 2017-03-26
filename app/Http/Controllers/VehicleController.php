@@ -11,14 +11,14 @@ class VehicleController extends Controller
     public $_vt = ["car","family car","Mini Bus","Bus","Slipper Coach Bus","3x2 Bus","2x2 Bus"];
     public function index(){
 		 $veh = Vehicle::all();
-		 $i=1; 
+		 $i=1;
 		 return view('pages.vehicle.view')->with("veh",$veh)->with("i",$i);
 	}
     public function create( Request $request ){
     	$inputs = Input::all();
     	$t=time();
     	$inputs['created_at']=$t;
-    	$inputs['updated_at']=$t;
+    	$inputs['updated_at']=$t; 
     	unset($inputs['_token']);
     	$insert_id = Vehicle::insertGetId($inputs);
         return redirect()->action('VehicleController@index');

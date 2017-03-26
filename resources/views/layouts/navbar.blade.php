@@ -1,4 +1,4 @@
-<?php 
+<?php
     $u = strtolower(Request::path());
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="{{url('/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" type="text/css" href="{{url('/css/material-gauge.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -42,7 +42,7 @@
 
 <body>
     <div id="wrapper">
-    
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -153,12 +153,12 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    
+
                     <?php $v = "/";  ?>
                     <li class="{{ $v == $u ? 'active' : '' }}">
                         <a  href="{{url('/')}}">Home</a>
                     </li>
-                    
+
                     <li class="{{strpos( $u, 'booking' )!==false ? 'active' : '' }}">
                         <a href="{{url('booking/view')}}">Booking</a>
                     </li>
@@ -203,7 +203,7 @@
     <script src="{{url('/js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-   
+
     <!-- Morris Charts JavaScript -->
     <!-- <script src="/js/plugins/morris/raphael.min.js"></script>
     <script src="/js/plugins/morris/morris.min.js"></script>
